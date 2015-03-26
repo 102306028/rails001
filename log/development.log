@@ -1,0 +1,163 @@
+  [1m[36m (3.1ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.1ms)[0m  select sqlite_version(*)
+  [1m[36m (2.6ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateMessages (20150326155801)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  CREATE TABLE "messages" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150326155801"]]
+  [1m[35m (3.6ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-26 23:59:01 +0800
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 1321ms (Views: 1308.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/assets/messages-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-26 23:59:02 +0800
+
+
+Started GET "/assets/application-0da39abd5635d0576f3c8000d4ecde84.css?body=1" for 127.0.0.1 at 2015-03-26 23:59:02 +0800
+
+
+Started GET "/assets/scaffolds-ba9b34a277c6df80c61bb543ed420044.css?body=1" for 127.0.0.1 at 2015-03-26 23:59:03 +0800
+
+
+Started GET "/assets/messages-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-26 23:59:03 +0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-26 23:59:03 +0800
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-26 23:59:03 +0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-26 23:59:03 +0800
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for 127.0.0.1 at 2015-03-26 23:59:03 +0800
+
+
+Started GET "/" for 127.0.0.1 at 2015-03-27 00:01:17 +0800
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.2ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 112ms (Views: 109.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/assets/messages-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:18 +0800
+
+
+Started GET "/assets/scaffolds-ba9b34a277c6df80c61bb543ed420044.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:18 +0800
+
+
+Started GET "/assets/application-0da39abd5635d0576f3c8000d4ecde84.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:18 +0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:18 +0800
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:18 +0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:18 +0800
+
+
+Started GET "/assets/messages-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:18 +0800
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:18 +0800
+
+
+Started GET "/messages/new" for 127.0.0.1 at 2015-03-27 00:01:20 +0800
+Processing by MessagesController#new as HTML
+  Rendered messages/_form.html.erb (30.3ms)
+  Rendered messages/new.html.erb within layouts/application (40.9ms)
+Completed 200 OK in 189ms (Views: 180.4ms | ActiveRecord: 0.2ms)
+
+
+Started POST "/messages" for 127.0.0.1 at 2015-03-27 00:01:25 +0800
+Processing by MessagesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"YnIlV+hjolmaZO3+Q/JZnrxkJ5v8hLSVqCHybZY7ilpVUt7Q5R3qi2CtoMY1MzyfH665oXxgWtZ2ybsQ5AxFZw==", "message"=>{"title"=>"test", "description"=>"1"}, "commit"=>"Create Message"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (1.7ms)[0m  [1mINSERT INTO "messages" ("title", "description", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "test"], ["description", "1"], ["created_at", "2015-03-26 16:01:25.704293"], ["updated_at", "2015-03-26 16:01:25.704293"]]
+  [1m[35m (15.0ms)[0m  commit transaction
+Redirected to http://localhost:3000/messages
+Completed 302 Found in 25ms (ActiveRecord: 16.8ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2015-03-27 00:01:25 +0800
+Processing by MessagesController#index as HTML
+  [1m[36mMessage Load (0.5ms)[0m  [1mSELECT "messages".* FROM "messages"[0m
+  Rendered messages/index.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 101ms (Views: 100.1ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/messages-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:25 +0800
+
+
+Started GET "/assets/scaffolds-ba9b34a277c6df80c61bb543ed420044.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:25 +0800
+
+
+Started GET "/assets/application-0da39abd5635d0576f3c8000d4ecde84.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:26 +0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:26 +0800
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:26 +0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:26 +0800
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:26 +0800
+
+
+Started GET "/assets/messages-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:26 +0800
+
+
+Started DELETE "/messages/1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+Processing by MessagesController#destroy as HTML
+  Parameters: {"authenticity_token"=>"zagLgYOkHLcNpWHjLRD8814pzjr7/soNitl37dBfNPT6iPAGjtpUZfdsLNtb0Zny/eNQAHsaJE5UMT6Qomj7yQ==", "id"=>"1"}
+  [1m[35mMessage Load (0.2ms)[0m  SELECT  "messages".* FROM "messages" WHERE "messages"."id" = ? LIMIT 1  [["id", 1]]
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.6ms)[0m  DELETE FROM "messages" WHERE "messages"."id" = ?  [["id", 1]]
+  [1m[36m (13.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/messages
+Completed 302 Found in 36ms (ActiveRecord: 14.7ms)
+
+
+Started GET "/messages" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+Processing by MessagesController#index as HTML
+  [1m[35mMessage Load (0.1ms)[0m  SELECT "messages".* FROM "messages"
+  Rendered messages/index.html.erb within layouts/application (2.7ms)
+Completed 200 OK in 85ms (Views: 84.5ms | ActiveRecord: 0.1ms)
+
+
+Started GET "/assets/messages-64e62ddc273c2f5847f30d698ca14b67.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+
+
+Started GET "/assets/scaffolds-ba9b34a277c6df80c61bb543ed420044.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+
+
+Started GET "/assets/application-0da39abd5635d0576f3c8000d4ecde84.css?body=1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+
+
+Started GET "/assets/jquery-87424c3c19e96d4fb033c10ebe21ec40.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+
+
+Started GET "/assets/jquery_ujs-e27bd20a10d28155845a22d71ef94f2f.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+
+
+Started GET "/assets/turbolinks-f87b3583ca50adb0488b031297f5580d.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+
+
+Started GET "/assets/messages-fcec5b5a277ac7c20cc9f45a209a3bcd.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
+
+
+Started GET "/assets/application-001948a807d6467a657420955d9f0c1c.js?body=1" for 127.0.0.1 at 2015-03-27 00:01:32 +0800
